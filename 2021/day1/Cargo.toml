@@ -1,0 +1,15 @@
+[package]
+name = "day1"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+itertools = "^0.8"
+
+[[bin]]
+name = "day1-part1"
+path = "src/day1-part1.rs"
+
+[[bin]]
+name = "day1-part2"
+path = "src/day1-part2.rs"
