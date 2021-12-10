@@ -1,8 +1,6 @@
 use std::io;
 use std::io::BufRead;
 
-use itertools::Itertools;
-
 #[derive(Debug)]
 enum Direction {
     Forward,

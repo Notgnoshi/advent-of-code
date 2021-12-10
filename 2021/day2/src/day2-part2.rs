@@ -1,8 +1,6 @@
 use std::io;
 use std::io::BufRead;
 
-use itertools::Itertools;
-
 #[derive(Debug)]
 enum Direction {
     Forward,
@@ -44,9 +42,6 @@ impl Submarine {
         self.horizontal += val;
         self.depth += self.aim * val;
     }
-    fn back(&mut self, val: i32) {
-        panic!("You can't go backwards!");
-    }
     fn up(&mut self, val: i32) {
         self.aim -= val;
     }
@@ -57,7 +52,7 @@ impl Submarine {
     fn interpret(&mut self, command: Command) {
         match command.direction {
             Direction::Forward => self.forward(command.amount),
-            Direction::Back => self.back(command.amount),
+            Direction::Back => panic!("You can't go backwards!"),
             Direction::Up => self.up(command.amount),
             Direction::Down => self.down(command.amount),
         }
